@@ -7,32 +7,7 @@
 
 import Foundation
 
-struct Student {
-    var name: String?
-    var score: Int?
-}
-
 var studentList = [Student]()
-
-enum MenuCodeType {
-    case addStudent         // 학생추가
-    case deleteStudent      // 학생삭제
-    case addOrModifyScore   // 성적추가
-    case deleteScore        // 성적삭제
-    case printAverage       // 평점보기
-    case exit               // 종료
-    
-    var code: String {
-        switch self {
-        case .addStudent      : return "1"    // 학생추가
-        case .deleteStudent   : return "2"    // 학생삭제
-        case .addOrModifyScore: return "3"    // 성적추가
-        case .deleteScore     : return "4"    // 성적삭제
-        case .printAverage    : return "5"    // 평점보기
-        case .exit            : return "X"    // 종료
-        }
-    }
-}
 
 /// 학생추가
 func addStudent() {
@@ -94,10 +69,7 @@ func addOrModifyScore() {
     }
     
     let splitedinputText = inputText.split(separator: " ")
-    
-    print(splitedinputText)
-    print(splitedinputText.count)
-    
+
     if splitedinputText.count != 3 {
         print("입력이 잘못되었습니다. 다시 확인해주세요.")
         return
@@ -106,6 +78,9 @@ func addOrModifyScore() {
     let name = splitedinputText[0]
     let scroeName = splitedinputText[1]
     let score = splitedinputText[2]
+    
+    print(name, scroeName, score)
+    
     
     
 }
@@ -164,8 +139,5 @@ func runCreditManager() {
     }
     
 }
-
-
-
 
 runCreditManager()
